@@ -1,0 +1,9 @@
+.next/
+node_modules/
+.env
+.env.local
+*.pyc
+__pycache__/
+clauseclear-adapter/
+clauseclear-merged/
+*.ipynb_checkpoints/
