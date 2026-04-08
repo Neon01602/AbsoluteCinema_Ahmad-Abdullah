@@ -1,0 +1,16 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "regions": ["bom1"],
+  "functions": {
+    "app/api/analyse/route.ts": {
+      "maxDuration": 30
+    },
+    "app/api/analyse-pdf/route.ts": {
+      "maxDuration": 60,
+      "memory": 1024
+    }
+  }
+}
