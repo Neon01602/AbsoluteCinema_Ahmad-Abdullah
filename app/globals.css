@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --ink: #0d1117;
+  --parchment: #f5f0e8;
+  --cream: #faf7f2;
+  --saffron: #e8a020;
+  --saffron-deep: #c4841a;
+  --vermillion: #c0392b;
+  --jade: #1a7a4a;
+  --slate: #2c3e50;
+  --mist: #8a9bb0;
+  --risk-high: #e74c3c;
+  --risk-medium: #e67e22;
+  --risk-low: #27ae60;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--ink);
+  margin: 0;
+}
+
+.font-display { font-family: var(--font-display); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--parchment); }
+::-webkit-scrollbar-thumb { background: var(--saffron); border-radius: 3px; }
+
+/* Animations */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(232, 160, 32, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(232, 160, 32, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(232, 160, 32, 0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-slide-up { animation: slideUp 0.5s ease forwards; }
+.animate-pulse-ring { animation: pulse-ring 2s infinite; }
+
+.shimmer {
+  background: linear-gradient(90deg, #f0ebe0 25%, #faf7f2 50%, #f0ebe0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Risk badges */
+.risk-high { background: #fdecea; color: var(--risk-high); border: 1px solid #f5c6c2; }
+.risk-medium { background: #fef6e4; color: var(--risk-medium); border: 1px solid #f8d9a0; }
+.risk-low { background: #eafaf1; color: var(--risk-low); border: 1px solid #a9dfbf; }
+
+/* Card styles */
+.clause-card {
+  background: white;
+  border: 1px solid #e8e0d0;
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.clause-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(13, 17, 23, 0.08);
+}
+
+/* Decorative elements */
+.pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e8a020' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
