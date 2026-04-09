@@ -82,20 +82,7 @@ React UI with risk badges + counter-clauses
 | 🔍 Missing Clause Detector | 6-pattern rule engine |
 | 💬 Counter-Clause Generator | Fine-tune output + template fallback |
 
-## 📁 Project Structure
 
-```
-clauseclear/
-├── clauseclear_train.ipynb     # Colab training notebook
-├── app/
-│   ├── page.tsx                # Main UI
-│   ├── globals.css             # Design system
-│   └── api/
-│       ├── analyse/route.ts    # Single clause analysis
-│       └── analyse-pdf/route.ts # Full PDF analysis
-├── vercel.json                 # Deployment config (Mumbai region)
-└── .env.example                # Environment variables template
-```
 
 ## 🌐 Works Without the Trained Model
 
